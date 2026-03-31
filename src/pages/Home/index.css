@@ -1,0 +1,21 @@
+.home-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.home-image {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.explore-button {
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  background: #256e5d;
+  color: white;
+  border-radius: 20px;
+}
+.button-card {
+  text-align: center;
+}
