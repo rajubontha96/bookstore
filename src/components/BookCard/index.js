@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import "./index.css";
 
 const BookCard = ({ book }) => {
   const { addToCart } = useContext(CartContext);
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    addToCart(book);
+    setAdded(true);
+  };
 
   return (
     <div className="card">
@@ -14,8 +20,8 @@ const BookCard = ({ book }) => {
 
       <Link to={`/books/${book.id}`}>Details</Link>
 
-      <button onClick={() => addToCart(book)}>
-        Add to Cart
+      <button onClick={handleAdd} disabled={added}>
+        {added ? "Added to Cart ✅" : "Add to Cart"}
       </button>
     </div>
   );

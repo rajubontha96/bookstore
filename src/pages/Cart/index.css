@@ -1,3 +1,39 @@
-.cart {
+.cart-container {
   padding: 20px;
+}
+
+/* Each cart item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* Image */
+.cart-item img {
+  width: 100px;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* Info */
+.cart-info {
+  flex: 1;
+}
+
+.cart-info button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.total {
+  margin-top: 20px;
 }

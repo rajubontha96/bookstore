@@ -11,21 +11,34 @@ const Cart = () => {
   );
 
   return (
-    <div>
-      <h2>Cart</h2>
+    <div className="cart-container">
+      <h2>Your Cart</h2>
 
-      {cart.map(item => (
-        <div key={item.id}>
-          <h4>{item.title}</h4>
-          <p>Qty: {item.qty}</p>
-          <p>₹{item.price}</p>
-          <button onClick={() => removeFromCart(item.id)}>
-            Remove
-          </button>
-        </div>
-      ))}
+      {cart.length === 0 ? (
+        <p>No items in cart</p>
+      ) : (
+        <>
+          {cart.map(item => (
+            <div className="cart-item" key={item.id}>
+              
+              <img src={item.image} alt={item.title} />
 
-      <h3>Total: ₹{total}</h3>
+              <div className="cart-info">
+                <h4>{item.title}</h4>
+                <p>Price: ₹{item.price}</p>
+                <p>Qty: {item.qty}</p>
+
+                <button onClick={() => removeFromCart(item.id)}>
+                  Remove
+                </button>
+              </div>
+
+            </div>
+          ))}
+
+          <h3 className="total">Total: ₹{total}</h3>
+        </>
+      )}
     </div>
   );
 };
