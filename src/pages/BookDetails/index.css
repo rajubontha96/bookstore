@@ -1,3 +1,60 @@
-.details {
+.details-container {
   padding: 20px;
 }
+
+/* Main layout */
+.details-card {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+/* 🔥 FIX IMAGE SIZE */
+.details-image {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Text section */
+.details-info {
+  max-width: 500px;
+}
+
+.desc {
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Button */
+.details-info button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #f5c518;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.details-info button:hover {
+  background: #e6b800;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .details-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .details-image {
+    width: 80%;
+    height: auto;
+  }
+}
+

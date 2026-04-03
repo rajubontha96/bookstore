@@ -11,15 +11,29 @@ const BookDetails = () => {
   const book = books.find(b => b.id === parseInt(id));
 
   return (
-    <div className="details">
-      <h2>{book.title}</h2>
-      <img src={book.image} alt={book.title} />
-      <p>{book.description}</p>
-      <h3>₹{book.price}</h3>
+    <div className="details-container">
+      
+      <div className="details-card">
+        
+        <img
+          src={book.image}
+          alt={book.title}
+          className="details-image"
+        />
 
-      <button onClick={() => addToCart(book)}>
-        Add to Cart
-      </button>
+        <div className="details-info">
+          <h1>{book.title}</h1>
+          <h3>{book.author}</h3>
+          <p className="desc">{book.description}</p>
+
+          <h2>₹{book.price}</h2>
+
+          <button onClick={() => addToCart(book)}>
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
     </div>
   );
 };
